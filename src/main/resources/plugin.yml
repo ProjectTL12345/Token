@@ -1,0 +1,15 @@
+name: Token
+author: Project_TL
+version: 1.0v
+api-version: 1.16
+main: org.projecttl.plugin.token.Main
+
+commands:
+  token:
+    description: You can get some tokens.
+    usage: /token <options> <type> <amount>
+
+permissions:
+  token.op:
+    description: Op's Command
+    default: op
