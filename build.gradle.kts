@@ -31,10 +31,6 @@ tasks {
         options.encoding = "UTF-8"
     }
 
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-
     compileScala {
         scalaCompileOptions.isOptimize = true
     }
