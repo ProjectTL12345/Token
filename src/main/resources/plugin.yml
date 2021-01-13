@@ -1,8 +1,8 @@
 name: Token
-author: Project_TL
-version: 1.0v
+author: $author
+version: $version
 api-version: 1.16
-main: org.projecttl.plugin.token.Main
+main: $main
 
 commands:
   token:
