@@ -18,10 +18,12 @@ class ArgumentForGetToken extends TabCompleter {
 
       else if (args.length == 2) {
         val tokenList = new util.ArrayList[String]()
+
         tokenList.add("bee")
         tokenList.add("cow")
         tokenList.add("chicken")
         tokenList.add("pig")
+        tokenList.add("sheep")
 
         return tokenList
       }

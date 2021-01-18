@@ -23,7 +23,7 @@ class CreateToken {
     targetPlayer.getInventory.addItem(token)
   }
 
-  def amountToken(player: Player, getAmount: Int, itemName: String): Unit = {
+  def printAddTokenLog(player: Player, getAmount: Int, itemName: String): Unit = {
     if (getAmount == 1 || getAmount == null)
       player.sendMessage(s"<Token> $getAmount ${itemName} has been paid.")
     else

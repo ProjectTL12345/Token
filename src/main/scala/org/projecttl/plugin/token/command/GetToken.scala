@@ -36,7 +36,7 @@ class GetToken extends CommandExecutor {
                   getAmount
                 )
 
-                create.amountToken(player, getAmount, s"${ChatColor.DARK_GRAY}Cow Token")
+                create.printAddTokenLog(player, getAmount, s"${ChatColor.DARK_GRAY}Cow Token")
                 return true
               }
 
@@ -50,7 +50,7 @@ class GetToken extends CommandExecutor {
                   getAmount
                 )
 
-                create.amountToken(player, getAmount, s"${ChatColor.DARK_RED}Chicken Token")
+                create.printAddTokenLog(player, getAmount, s"${ChatColor.DARK_RED}Chicken Token")
                 return true
               }
 
@@ -64,7 +64,7 @@ class GetToken extends CommandExecutor {
                   getAmount
                 )
 
-                create.amountToken(player, getAmount, s"${ChatColor.LIGHT_PURPLE}Pig Token")
+                create.printAddTokenLog(player, getAmount, s"${ChatColor.LIGHT_PURPLE}Pig Token")
                 return true
               }
 
@@ -78,11 +78,11 @@ class GetToken extends CommandExecutor {
                   getAmount
                 )
 
-                create.amountToken(player, getAmount, s"${ChatColor.YELLOW}Bee Token")
+                create.printAddTokenLog(player, getAmount, s"${ChatColor.YELLOW}Bee Token")
                 return true
               }
 
-              else if (args(1).equalsIgnoreCase("Fox")) {
+              else if (args(1).equalsIgnoreCase("fox")) {
                 val getAmount: Int = Integer.valueOf(args(2))
                 create.createToken(
                   player,
@@ -92,8 +92,21 @@ class GetToken extends CommandExecutor {
                   getAmount
                 )
 
-                create.amountToken(player, getAmount, s"${ChatColor.GOLD}Fox Token")
+                create.printAddTokenLog(player, getAmount, s"${ChatColor.GOLD}Fox Token")
                 return true
+              }
+
+              else if (args(1).equalsIgnoreCase("sheep")) {
+                val getAmount: Int = Integer.valueOf(args(2))
+                create.createToken(
+                  player,
+                  "Sheep Token",
+                  "You can buy some sheep in shop",
+                  6,
+                  getAmount
+                )
+
+                create.printAddTokenLog(player, getAmount, "Sheep Token")
               }
             }
           }
