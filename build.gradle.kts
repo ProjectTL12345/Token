@@ -36,6 +36,12 @@ tasks {
         from(sourceSets["main"].allSource)
     }
 
+    processResources {
+        filesMatching("*.yml") {
+            expand(project.properties)
+        }
+    }
+
     jar {
         from ( shade.map { if (it.isDirectory) it else zipTree(it) } )
     }
