@@ -22,6 +22,7 @@ class ArgumentForGetToken extends TabCompleter {
         tokenList.add("bee")
         tokenList.add("cow")
         tokenList.add("chicken")
+        tokenList.add("horse")
         tokenList.add("pig")
         tokenList.add("sheep")
 

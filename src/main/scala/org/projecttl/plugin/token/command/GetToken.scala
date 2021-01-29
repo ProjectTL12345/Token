@@ -3,7 +3,7 @@ package org.projecttl.plugin.token.command
 import org.bukkit.ChatColor
 import org.bukkit.command.{Command, CommandExecutor, CommandSender}
 import org.bukkit.entity.Player
-import org.projecttl.plugin.token.util.CreateToken
+import org.projecttl.plugin.token.util.{CreateToken, GetTokenList}
 
 class GetToken extends CommandExecutor {
 
@@ -14,8 +14,8 @@ class GetToken extends CommandExecutor {
     }
 
     else {
-      val create = new CreateToken
       val player = sender.asInstanceOf[Player]
+      val getTokenList = new GetTokenList(player)
 
       if (player.hasPermission("token.op")) {
         if (command.getName.equalsIgnoreCase("token")) {
@@ -28,85 +28,44 @@ class GetToken extends CommandExecutor {
             if (args(0).equalsIgnoreCase("add")) {
               if (args(1).equalsIgnoreCase("cow")) {
                 val getAmount: Int = Integer.valueOf(args(2))
-                create.createToken(
-                  player,
-                  s"${ChatColor.DARK_GRAY}Cow Token",
-                  "You can buy some cow in shop.",
-                  1,
-                  getAmount
-                )
+                getTokenList.cow(getAmount)
 
-                create.printAddTokenLog(player, getAmount, s"${ChatColor.DARK_GRAY}Cow Token")
                 return true
               }
 
               else if (args(1).equalsIgnoreCase("chicken")) {
                 val getAmount: Int = Integer.valueOf(args(2))
-                create.createToken(
-                  player,
-                  s"${ChatColor.DARK_RED}Chicken Token",
-                  "You can buy some chicken in shop.",
-                  2,
-                  getAmount
-                )
+                getTokenList.chicken(getAmount)
 
-                create.printAddTokenLog(player, getAmount, s"${ChatColor.DARK_RED}Chicken Token")
                 return true
               }
 
               else if (args(1).equalsIgnoreCase("pig")) {
                 val getAmount: Int = Integer.valueOf(args(2))
-                create.createToken(
-                  player,
-                  s"${ChatColor.LIGHT_PURPLE}Pig Token",
-                  s"${ChatColor.YELLOW}You can buy some pig in shop.",
-                  3,
-                  getAmount
-                )
+                getTokenList.pig(getAmount)
 
-                create.printAddTokenLog(player, getAmount, s"${ChatColor.LIGHT_PURPLE}Pig Token")
                 return true
               }
 
               else if (args(1).equalsIgnoreCase("bee")) {
                 val getAmount: Int = Integer.valueOf(args(2))
-                create.createToken(
-                  player,
-                  s"${ChatColor.YELLOW}Bee Token",
-                  "You can buy some bee in shop.",
-                  4,
-                  getAmount
-                )
+                getTokenList.bee(getAmount)
 
-                create.printAddTokenLog(player, getAmount, s"${ChatColor.YELLOW}Bee Token")
                 return true
               }
 
-              else if (args(1).equalsIgnoreCase("fox")) {
+              else if (args(1).equalsIgnoreCase("horse")) {
                 val getAmount: Int = Integer.valueOf(args(2))
-                create.createToken(
-                  player,
-                  s"${ChatColor.GOLD}Fox Token",
-                  "You can buy some fox in shop.",
-                  5,
-                  getAmount
-                )
+                getTokenList.horse(getAmount)
 
-                create.printAddTokenLog(player, getAmount, s"${ChatColor.GOLD}Fox Token")
                 return true
               }
 
               else if (args(1).equalsIgnoreCase("sheep")) {
                 val getAmount: Int = Integer.valueOf(args(2))
-                create.createToken(
-                  player,
-                  "Sheep Token",
-                  "You can buy some sheep in shop",
-                  6,
-                  getAmount
-                )
+                getTokenList.sheep(getAmount)
 
-                create.printAddTokenLog(player, getAmount, "Sheep Token")
+                return true
               }
             }
           }
