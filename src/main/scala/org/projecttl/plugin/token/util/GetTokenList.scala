@@ -3,7 +3,7 @@ package org.projecttl.plugin.token.util
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
-class GetTokenList(var player: Player) extends CreateToken {
+class GetTokenList extends CreateToken {
 
   val cowTokenName = s"${ChatColor.DARK_GRAY}Cow Token"
   val chickenTokenName = s"${ChatColor.DARK_RED}Chicken Token"
@@ -13,7 +13,7 @@ class GetTokenList(var player: Player) extends CreateToken {
   val horseTokenName = s"${ChatColor.GOLD}Horse Token"
   val sheepTokenName = s"${ChatColor.WHITE}Sheep Token"
 
-  def cow(getAmount: Int): Unit = {
+  def cow(player: Player, getAmount: Int): Unit = {
     createToken(
       player,
       cowTokenName,
@@ -25,7 +25,7 @@ class GetTokenList(var player: Player) extends CreateToken {
     printAddTokenLog(player, getAmount, cowTokenName)
   }
 
-  def chicken(getAmount: Int): Unit = {
+  def chicken(player: Player, getAmount: Int): Unit = {
     createToken(
       player,
       chickenTokenName,
@@ -37,7 +37,7 @@ class GetTokenList(var player: Player) extends CreateToken {
     printAddTokenLog(player, getAmount, chickenTokenName)
   }
 
-  def pig(getAmount: Int): Unit = {
+  def pig(player: Player, getAmount: Int): Unit = {
     createToken(
       player,
       pigTokenName,
@@ -49,7 +49,7 @@ class GetTokenList(var player: Player) extends CreateToken {
     printAddTokenLog(player, getAmount, pigTokenName)
   }
 
-  def bee(getAmount: Int): Unit = {
+  def bee(player: Player, getAmount: Int): Unit = {
     createToken(
       player,
       beeTokenName,
@@ -61,7 +61,7 @@ class GetTokenList(var player: Player) extends CreateToken {
     printAddTokenLog(player, getAmount, beeTokenName)
   }
 
-  def horse(getAmount: Int): Unit = {
+  def horse(player: Player, getAmount: Int): Unit = {
     createToken(
       player,
       horseTokenName,
@@ -73,7 +73,7 @@ class GetTokenList(var player: Player) extends CreateToken {
     printAddTokenLog(player, getAmount, horseTokenName)
   }
 
-  def sheep(getAmount: Int): Unit = {
+  def sheep(player: Player, getAmount: Int): Unit = {
     createToken(
       player,
       sheepTokenName,

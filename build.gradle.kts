@@ -1,5 +1,4 @@
 plugins {
-    kotlin("jvm") version "1.4.21"
     scala
     id("com.github.johnrengelman.shadow") version "6.1.0"
     `maven-publish`
@@ -15,10 +14,9 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
     implementation("org.scala-lang:scala-library:2.13.3")
-    compileOnly("com.github.ProjectTL12345:InventoryGUI:1.0v")
-    compileOnly("com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT")
+    compileOnly("com.github.ProjectTL12345:InventoryGUI:1.2v")
+    compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
 }
 
 val shade = configurations.create("shade")
