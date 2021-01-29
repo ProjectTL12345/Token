@@ -21,11 +21,13 @@ class InteractionAnimalToken extends Listener {
 
     val summonLocation = new Location(getWorld, getX, getY, getZ)
 
-    if (player.getInventory.getItemInMainHand.getType == null) {
+    if (player.getInventory.getItemInMainHand == null) {
       return
     } else {
       if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
-        if (player.getInventory.getItemInMainHand.getType.equals(Material.EMERALD)) {
+        player.sendMessage("Debug")
+        if (player.getInventory.getItemInMainHand.getType == Material.EMERALD) {
+          player.sendMessage("Debug")
           if (player.getInventory.getItemInMainHand.getItemMeta.getDisplayName.equalsIgnoreCase(new GetTokenList(player).cowTokenName)) {
             getWorld.spawnEntity(summonLocation, EntityType.COW)
             player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a cow using token.")
