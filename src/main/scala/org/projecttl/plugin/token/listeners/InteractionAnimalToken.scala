@@ -35,6 +35,7 @@ class InteractionAnimalToken extends Listener {
               val meta = token.getItemMeta
               meta.setDisplayName(getTokenList.cowTokenName)
               token.setItemMeta(meta)
+              token.setAmount(1)
 
               getWorld.spawnEntity(summonLocation, EntityType.COW)
               player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a cow using token.")
@@ -46,6 +47,7 @@ class InteractionAnimalToken extends Listener {
               val meta = token.getItemMeta
               meta.setDisplayName(getTokenList.chickenTokenName)
               token.setItemMeta(meta)
+              token.setAmount(1)
 
               getWorld.spawnEntity(summonLocation, EntityType.CHICKEN)
               player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a chicken using token.")
@@ -57,6 +59,7 @@ class InteractionAnimalToken extends Listener {
               val meta = token.getItemMeta
               meta.setDisplayName(getTokenList.pigTokenName)
               token.setItemMeta(meta)
+              token.setAmount(1)
 
               getWorld.spawnEntity(summonLocation, EntityType.PIG)
               player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a pig using token.")
@@ -68,6 +71,7 @@ class InteractionAnimalToken extends Listener {
               val meta = token.getItemMeta
               meta.setDisplayName(getTokenList.beeTokenName)
               token.setItemMeta(meta)
+              token.setAmount(1)
 
               getWorld.spawnEntity(summonLocation, EntityType.BEE)
               player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a bee using token.")
@@ -79,6 +83,7 @@ class InteractionAnimalToken extends Listener {
               val meta = token.getItemMeta
               meta.setDisplayName(getTokenList.beeTokenName)
               token.setItemMeta(meta)
+              token.setAmount(1)
 
               getWorld.spawnEntity(summonLocation, EntityType.HORSE)
               player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a horse using token.")
@@ -90,11 +95,10 @@ class InteractionAnimalToken extends Listener {
               val meta = token.getItemMeta
               meta.setDisplayName(getTokenList.sheepTokenName)
               token.setItemMeta(meta)
+              token.setAmount(1)
 
               getWorld.spawnEntity(summonLocation, EntityType.SHEEP)
-              player.sendMessage(s"<Token> ${
-                ChatColor.GREEN
-              }Summoned a sheep using token.")
+              player.sendMessage(s"<Token> ${ChatColor.GREEN}Summoned a sheep using token.")
 
               player.getInventory.removeItem(token)
           }
